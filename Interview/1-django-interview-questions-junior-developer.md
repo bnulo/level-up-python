@@ -1,6 +1,6 @@
 # Interview
 
-#### difference between list and tuple
+## difference between list and tuple
 
 list is mutable but tuple is immutable
 
