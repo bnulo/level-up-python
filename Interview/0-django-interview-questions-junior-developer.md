@@ -1,4 +1,6 @@
-## Django
+## Django Interview Questions (Junior Developer)
+
+[Here is the original Youtube video](https://www.youtube.com/watch?v=9ai0b1LRMQM)
 
 ### Basics
 
@@ -214,6 +216,3 @@ This is done in many different ways like:
 #### What are Model Serializers and Model Serializers?
 
 Serializing data is a way of taking python data and turning it into something like json data, xml ... so a model serializer is something like a model form where we create a class based on a model and data in that model gets turned into json format
-
-
-[Here is the original Youtube video](https://www.youtube.com/watch?v=9ai0b1LRMQM)
