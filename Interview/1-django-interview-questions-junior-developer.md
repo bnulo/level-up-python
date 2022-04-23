@@ -4,7 +4,7 @@
 
 list is mutable but tuple is immutable
 
-#### What is zip?
+### What is zip?
 
 The zip() function returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
 
@@ -21,7 +21,7 @@ print(x)
 # <zip object at 0x2b0fadfff3c0>
 ```
 
-#### What is context manager?
+### What is context manager?
 
 Context managers allow you to allocate and release resources precisely when you want to. The most widely used example of context managers is the with statement. Suppose you have two related operations which you’d like to execute as a pair, with a block of code in between. Context managers allow you to do specifically that. For example:
 
@@ -41,7 +41,7 @@ finally:
 ```
 
 
-#### Have you ever implemented a context manager?
+### Have you ever implemented a context manager?
 
 At the very least a context manager has an __enter__ and __exit__ method defined. Let’s make our own file-opening Context Manager and learn the basics.
 
@@ -120,7 +120,7 @@ Our __exit__ method returned True, therefore no exception was raised by the with
 
 This is not the only way to implement Context Managers. There is another way and we will be looking at it in the next section.
 
-##### Implementing a Context Manager as a Generator
+#### Implementing a Context Manager as a Generator
 
 We can also implement Context Managers using decorators and generators. Python has a contextlib module for this very purpose. Instead of a class, we can implement a Context Manager using a generator function. Let’s see a basic, useless example:
 
@@ -151,11 +151,11 @@ with open_file('some_file') as f:
     f.write('hola!')
 ```
 
-#### decorator
+### decorator
 
 Decorators are a significant part of Python. In simple words: they are functions which modify the functionality of other functions. They help to make our code shorter and more Pythonic. Most beginners do not know where to use them so I am going to share some areas where decorators can make your code more concise.
 
-##### Everything in Python is an object
+#### Everything in Python is an object
 
 ```python
 def hi(name="yasoob"):
@@ -181,7 +181,7 @@ print(greet())
 #outputs: 'hi yasoob'
 ```
 
-##### Defining functions within functions
+#### Defining functions within functions
 
 ```python
 def hi(name="yasoob"):
@@ -211,7 +211,7 @@ greet()
 #outputs: NameError: name 'greet' is not defined
 ```
 
-##### Returning functions from within functions
+#### Returning functions from within functions
 
 It is not necessary to execute a function within another function, we can return it as an output as well:
 
@@ -241,7 +241,7 @@ print(a())
 
 Just take a look at the code again. In the if/else clause we are returning greet and welcome, not greet() and welcome(). Why is that? It’s because when you put a pair of parentheses after it, the function gets executed; whereas if you don’t put parenthesis after it, then it can be passed around and can be assigned to other variables without executing it. Did you get it? Let me explain it in a little bit more detail. When we write a = hi(), hi() gets executed and because the name is yasoob by default, the function greet is returned. If we change the statement to a = hi(name = "ali") then the welcome function will be returned. We can also do print hi()() which outputs now you are in the greet() function.
 
-##### Giving a function as an argument to another function
+#### Giving a function as an argument to another function
 
 ```python
 def hi():
@@ -256,7 +256,7 @@ doSomethingBeforeHi(hi)
 #        hi yasoob!
 ```
 
-##### Writing your first decorator
+#### Writing your first decorator
 
 In the last example we actually made a decorator! Let’s modify the previous decorator and make a little bit more usable program:
 
@@ -362,11 +362,11 @@ print(func())
 
 Note: @wraps takes a function to be decorated and adds the functionality of copying over the function name, docstring, arguments list, etc. This allows us to access the pre-decorated function’s properties in the decorator.
 
-##### Use-cases
+#### Use-cases
 
 Now let’s take a look at the areas where decorators really shine and their usage makes something really easy to manage.
 
-##### Authorization
+#### Authorization
 
 Decorators can help to check whether someone is authorized to use an endpoint in a web application. They are extensively used in Flask web framework and Django. Here is an example to employ decorator based authentication:
 
@@ -385,7 +385,7 @@ def requires_auth(f):
     return decorated
 ```
 
-##### Logging
+#### Logging
 
 Logging is another area where the decorators shine. Here is an example:
 
@@ -409,13 +409,13 @@ result = addition_func(4)
 # Output: addition_func was called
 ```
 
-##### Decorators with Arguments
+#### Decorators with Arguments
 
 Come to think of it, isn’t @wraps also a decorator? But, it takes an argument like any normal function can do. So, why can’t we do that too?
 
 This is because when you use the @my_decorator syntax, you are applying a wrapper function with a single function as a parameter. Remember, everything in Python is an object, and this includes functions! With that in mind, we can write a function that returns a wrapper function.
 
-##### Nesting a Decorator Within a Function
+#### Nesting a Decorator Within a Function
 
 Let’s go back to our logging example, and create a wrapper which lets us specify a logfile to output to.
 
@@ -453,7 +453,7 @@ myfunc2()
 # A file called func2.log now exists, with the above string
 ```
 
-##### Decorator Classes
+#### Decorator Classes
 
 Now we have our logit decorator in production, but when some parts of our application are considered critical, failure might be something that needs more immediate attention. Let’s say sometimes you want to just log to a file. Other times you want an email sent, so the problem is brought to your attention, and still keep a log for your own records. This is a case for using inheritence, but so far we’ve only seen functions being used to build decorators.
 
@@ -520,7 +520,7 @@ class email_logit(logit):
 
 From here, @email_logit works just like @logit but sends an email to the admin in addition to logging.
 
-#### What is singleton pattern?
+### What is singleton pattern?
 A Singleton pattern in python is a design pattern that allows you to create just one instance of a class, throughout the lifetime of a program. Using a singleton pattern has many benefits. A few of them are:
 
 - To limit concurrent access to a shared resource.
@@ -534,7 +534,7 @@ A singleton pattern can be implemented in three different ways. They are as foll
 - Classic Singleton
 - Borg Singleton
 
-##### Module-level Singleton:
+#### Module-level Singleton:
 
 All modules are singleton, by definition.  Let’s create a simple module-level singleton where the data is shared among other modules. Here we will create three python files – singleton.py, sample_module1.py, and sample_module2.py – in which the other sample modules share a variable from singleton.py.
 
@@ -556,7 +556,7 @@ print(singleton.shared_variable)
 
 Here, the value changed by samplemodule1 is also reflected in samplemodule2.
 
-##### Classic Singleton:
+#### Classic Singleton:
 
 Classic Singleton creates an instance only if there is no instance created so far; otherwise, it will return the instance that is already created. Let’s take a look at the below code.
 
@@ -610,7 +610,7 @@ Singleton Variable
 
 Here, you can see that SingletonChild has the same instance of SingletonClass and also shares the same state. But there are scenarios, where we need a different instance, but should share the same state. This state sharing can be achieved using Borg singleton.
 
-##### Borg Singleton:
+#### Borg Singleton:
 
 Borg singleton is a design pattern in Python that allows state sharing for different instances. Let’s look into the following code.
 
@@ -672,7 +672,7 @@ Traceback (most recent call last):
 AttributeError: 'NewChildBorg' object has no attribute 'shared_variable'
 ```
 
-##### Use cases of a Singleton:
+#### Use cases of a Singleton:
 
 Let’s list a few of the use cases of a singleton class. They are as follows:
 
@@ -681,7 +681,7 @@ Let’s list a few of the use cases of a singleton class. They are as follows:
 - File Manager
 - Print spooler
 
-##### Create a Web Crawler using Classic Singleton:
+#### Create a Web Crawler using Classic Singleton:
 
 Let’s create a webcrawler that uses the benefit of a classic singleton. In this practical example, the crawler scans a webpage, fetch the links associated with the same website, and download all the images in it. Here, we have two main classes and two main functions.
 
@@ -861,7 +861,7 @@ if __name__ == "__main__":
 	main()
 ```
 
-#### What is solid?
+### What is solid?
 
 - Single-responsibility Principle (SRP) states: A class should have one and only one reason to change, meaning that a class should have only one job.
 - Open-closed Principle (OCP) states: Objects or entities should be open for extension but closed for modification.
@@ -869,7 +869,7 @@ if __name__ == "__main__":
 - Interface segregation principle states: A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.
 - Dependency inversion principle states: Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.
 
-#### instance vs static vs class vs abstract functions
+### instance vs static vs class vs abstract functions
 
 **Instance method**
 Instance methods are very basic and easy method that we use regularly when we create Class in Python. If we want to print an instance variable or instance method we must create an object of that required class. They access the unique data, i.e. Instance methods will be able to access the data and properties unique to each instance.
@@ -935,7 +935,7 @@ class RECTANGLE(POLYGON):
 1. Abstract methods are created using the @abstractmethod decorator.
 2. They override the properties of base class.
 
-#### lambda functions
+### lambda functions
 
 Lambdas are one line functions. They are also known as anonymous functions in some other languages. You might want to use lambdas when you don’t want to use a function twice in a program. They are just like normal functions and even behave like them.
 
@@ -972,7 +972,7 @@ data = sorted(data)
 list1, list2 = map(lambda t: list(t), zip(*data))
 ```
 
-#### dictionary shallow vs deep copy
+### dictionary shallow vs deep copy
 
 By "shallow copying" it means the content of the dictionary is not copied by value, but just creating a new reference.
 
@@ -1003,11 +1003,11 @@ In contrast, a deep copy will copy all contents by value.
 3. **b = copy.deepcopy(a)**: Deep copying, a and b's structure and content become completely isolated.
 
 
-#### Django architecture
+### Django architecture
 
 MVT (Model View Template)
 
-#### name some Django commands
+### name some Django commands
 
 > **django -admin startproject PROJECT_NAME** Start a project
 **python manage.py startapp APP_NAME** Start an app
@@ -1015,9 +1015,9 @@ MVT (Model View Template)
 **python manage.py makemigrations** Configures and creates the basic migrations and preps the database for changes.
 **python manage.py migrate** This is what actually enforces those changes and applies changes to our database.
 
-#### Q Query
+### Q Query
 
-##### Complex lookups with Q objects
+#### Complex lookups with Q objects
 
 Keyword argument queries – in filter(), etc. – are “AND”ed together. If you need to execute more complex queries (for example, queries with OR statements), you can use Q objects.
 A Q object (django.db.models.Q) is an object used to encapsulate a collection of keyword arguments. These keyword arguments are specified as in “Field lookups” above.
