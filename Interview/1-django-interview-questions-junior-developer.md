@@ -1,10 +1,10 @@
-## Interview
+# Interview
 
 #### difference between list and tuple
 
 list is mutable but tuple is immutable
 
-### What is zip?
+## What is zip?
 
 The zip() function returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
 
@@ -21,7 +21,7 @@ print(x)
 # <zip object at 0x2b0fadfff3c0>
 ```
 
-### What is context manager?
+## What is context manager?
 
 Context managers allow you to allocate and release resources precisely when you want to. The most widely used example of context managers is the with statement. Suppose you have two related operations which you’d like to execute as a pair, with a block of code in between. Context managers allow you to do specifically that. For example:
 
@@ -41,7 +41,7 @@ finally:
 ```
 
 
-### Have you ever implemented a context manager?
+## Have you ever implemented a context manager?
 
 At the very least a context manager has an __enter__ and __exit__ method defined. Let’s make our own file-opening Context Manager and learn the basics.
 
@@ -151,7 +151,7 @@ with open_file('some_file') as f:
     f.write('hola!')
 ```
 
-### decorator
+## decorator
 
 Decorators are a significant part of Python. In simple words: they are functions which modify the functionality of other functions. They help to make our code shorter and more Pythonic. Most beginners do not know where to use them so I am going to share some areas where decorators can make your code more concise.
 
@@ -520,7 +520,7 @@ class email_logit(logit):
 
 From here, @email_logit works just like @logit but sends an email to the admin in addition to logging.
 
-### What is singleton pattern?
+## What is singleton pattern?
 A Singleton pattern in python is a design pattern that allows you to create just one instance of a class, throughout the lifetime of a program. Using a singleton pattern has many benefits. A few of them are:
 
 - To limit concurrent access to a shared resource.
@@ -549,7 +549,7 @@ print(singleton.shared_variable)
 singleton.shared_variable += "(modified by samplemodule1)"
 samplemodule1.py
 
-##samplemodule2.py
+## samplemodule2.py
 import singleton
 print(singleton.shared_variable)
 ```
@@ -576,7 +576,7 @@ singleton.singl_variable = "Singleton Variable"
 print(new_singleton.singl_variable)
 ```
 
-**Output**
+Output
 
 ```
 True
@@ -861,7 +861,7 @@ if __name__ == "__main__":
 	main()
 ```
 
-### What is solid?
+## What is solid?
 
 - Single-responsibility Principle (SRP) states: A class should have one and only one reason to change, meaning that a class should have only one job.
 - Open-closed Principle (OCP) states: Objects or entities should be open for extension but closed for modification.
@@ -869,7 +869,7 @@ if __name__ == "__main__":
 - Interface segregation principle states: A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.
 - Dependency inversion principle states: Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.
 
-### instance vs static vs class vs abstract functions
+## instance vs static vs class vs abstract functions
 
 **Instance method**
 Instance methods are very basic and easy method that we use regularly when we create Class in Python. If we want to print an instance variable or instance method we must create an object of that required class. They access the unique data, i.e. Instance methods will be able to access the data and properties unique to each instance.
@@ -935,7 +935,7 @@ class RECTANGLE(POLYGON):
 1. Abstract methods are created using the @abstractmethod decorator.
 2. They override the properties of base class.
 
-### lambda functions
+## lambda functions
 
 Lambdas are one line functions. They are also known as anonymous functions in some other languages. You might want to use lambdas when you don’t want to use a function twice in a program. They are just like normal functions and even behave like them.
 
@@ -972,7 +972,7 @@ data = sorted(data)
 list1, list2 = map(lambda t: list(t), zip(*data))
 ```
 
-### dictionary shallow vs deep copy
+## Dictionary shallow vs deep copy
 
 By "shallow copying" it means the content of the dictionary is not copied by value, but just creating a new reference.
 
@@ -1003,11 +1003,11 @@ In contrast, a deep copy will copy all contents by value.
 3. **b = copy.deepcopy(a)**: Deep copying, a and b's structure and content become completely isolated.
 
 
-### Django architecture
+## Django architecture
 
 MVT (Model View Template)
 
-### name some Django commands
+## Name some Django commands
 
 > **django -admin startproject PROJECT_NAME** Start a project
 **python manage.py startapp APP_NAME** Start an app
@@ -1015,7 +1015,7 @@ MVT (Model View Template)
 **python manage.py makemigrations** Configures and creates the basic migrations and preps the database for changes.
 **python manage.py migrate** This is what actually enforces those changes and applies changes to our database.
 
-### Q Query
+## Q Query
 
 #### Complex lookups with Q objects
 
