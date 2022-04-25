@@ -216,7 +216,7 @@ Matches any valid HTML tag and the corresponding closing tag
 Matches any valid hex color inside text
 ```
 
-#### Valid email (RFC5322
+#### Valid email (RFC5322)
 
 ```
 \b[\w.!#$%&’*+\/=?^`{|}~-]+@[\w-]+(?:\.[\w-]+)*\b
