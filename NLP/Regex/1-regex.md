@@ -286,3 +286,8 @@ uppercase literal only
 ```
 
 [Here you can read the original article](https://medium.com/factory-mind/regex-cookbook-most-wanted-regex-aa721558c3c1)
+
+**Other Links**
+[Link1](https://www.dataquest.io/blog/regex-cheatsheet/)
+[Link2](https://www.geeksforgeeks.org/python-regex-cheat-sheet/)
+[Link3](https://www.adamsmith.haus/python/answers/how-to-get-positions-and-values-of-matches-to-a-regular-expression-in-python)
