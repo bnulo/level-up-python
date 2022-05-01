@@ -29,5 +29,7 @@ shows list of files including hidden files
 ```
 activates the virtual environment
 
-> deactivate
+```
+deactivate
+```
 deactivates the virtual environment
